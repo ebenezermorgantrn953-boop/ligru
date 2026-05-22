@@ -1,0 +1,73 @@
+<view class="page-container">
+  <!-- 顶部横幅 -->
+  <view class="hero-banner gradient-primary">
+    <view class="hero-content">
+      <text class="hero-title">AI 智能去水印</text>
+      <text class="hero-sub">无痕清除 · 保留画质 · 极速处理</text>
+      <view class="hero-badge" wx:if="{{userInfo}}">
+        <text wx:if="{{userInfo.is_vip}}">👑 会员无限次</text>
+        <text wx:else>今日剩余 {{userInfo.remain_count}} 次</text>
+      </view>
+    </view>
+    <view class="hero-deco"></view>
+  </view>
+
+  <!-- 三大功能 -->
+  <view class="section-title">核心功能</view>
+  <view class="feature-grid">
+    <view class="feature-item" bindtap="goImage" data-type="image">
+      <view class="feature-icon" style="background:linear-gradient(135deg,#5B6CF8,#7C8FFF)">
+        <text>🖼</text>
+      </view>
+      <view class="feature-name">图片去水印</view>
+      <view class="feature-desc">AI智能识别，相册/拍照上传</view>
+    </view>
+    <view class="feature-item" bindtap="goVideo">
+      <view class="feature-icon" style="background:linear-gradient(135deg,#8B5CF6,#B06CF8)">
+        <text>🎬</text>
+      </view>
+      <view class="feature-name">短视频去水印</view>
+      <view class="feature-desc">粘贴链接，剥离平台水印</view>
+    </view>
+    <view class="feature-item" bindtap="goBrush">
+      <view class="feature-icon" style="background:linear-gradient(135deg,#4FACFE,#00F2FE)">
+        <text>✏️</text>
+      </view>
+      <view class="feature-name">手动涂抹</view>
+      <view class="feature-desc">框选区域，精准局部消除</view>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="section-title" style="margin-top:40rpx">更多服务</view>
+  <view class="quick-list glass-card">
+    <view class="quick-item" bindtap="goMember">
+      <text class="quick-icon">👑</text>
+      <text class="quick-text">开通会员 · 无限次使用</text>
+      <text class="quick-arrow">›</text>
+    </view>
+    <view class="quick-item" bindtap="goHelp">
+      <text class="quick-icon">📖</text>
+      <text class="quick-text">使用帮助</text>
+      <text class="quick-arrow">›</text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部横幅广告 -->
+<view class="ad-banner-placeholder" wx:if="{{bannerAdUnitId}}">
+  <ad unit-id="{{bannerAdUnitId}}" ad-type="banner" ad-theme="white"></ad>
+</view>
+
+<!-- 次数不足弹窗 -->
+<view class="modal-mask" wx:if="{{showAdModal}}" catchtap="closeAdModal">
+  <view class="modal-content" catchtap="">
+    <view class="modal-title">{{adModalTitle}}</view>
+    <view class="modal-desc">{{adModalDesc}}</view>
+    <view class="modal-btns">
+      <view class="btn btn-cancel" bindtap="closeAdModal">取消</view>
+      <view class="btn btn-confirm" bindtap="watchAd">看广告领次数</view>
+    </view>
+    <view style="margin-top:20rpx;font-size:24rpx;color:#5B6CF8" bindtap="goMember">开通会员 ›</view>
+  </view>
+</view>

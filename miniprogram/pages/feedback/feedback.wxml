@@ -1,0 +1,12 @@
+<view class="page-container">
+  <view class="form-card glass-card">
+    <view class="section-title">问题描述</view>
+    <textarea class="feedback-input" placeholder="请详细描述您遇到的问题或建议..." value="{{content}}" bindinput="onInput" maxlength="500"></textarea>
+    <view class="char-count">{{content.length}}/500</view>
+
+    <view class="section-title" style="margin-top:32rpx">联系方式（选填）</view>
+    <input class="contact-input" placeholder="微信号/手机号，方便我们回复" value="{{contact}}" bindinput="onContact" />
+  </view>
+
+  <view class="btn-primary" bindtap="submit">提交反馈</view>
+</view>

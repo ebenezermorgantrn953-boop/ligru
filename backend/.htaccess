@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# 禁止直接访问配置文件
+RewriteRule ^config/ - [F,L]
+
+# 上传目录禁止执行PHP
+<Directory "uploads">
+    php_flag engine off
+</Directory>
+</IfModule>

@@ -1,0 +1,35 @@
+.input-card { padding: 32rpx; margin-bottom: 32rpx; }
+
+.url-input {
+  width: 100%;
+  min-height: 160rpx;
+  background: #F8F9FC;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+.paste-btn {
+  text-align: center;
+  color: #5B6CF8;
+  font-size: 26rpx;
+  padding: 12rpx;
+}
+
+.result-card { padding: 32rpx; margin-top: 32rpx; }
+
+.result-platform {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #5B6CF8;
+  background: rgba(91,108,248,0.1);
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+}
+.result-title { font-size: 28rpx; color: #666; display: block; margin-bottom: 12rpx; }
+.result-tips { font-size: 24rpx; color: #999; display: block; margin-bottom: 24rpx; }
+
+.result-video { width: 100%; height: 400rpx; border-radius: 16rpx; }

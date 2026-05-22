@@ -1,0 +1,32 @@
+<view class="page-container">
+  <view class="tip-card glass-card">
+    <text class="tip-text">👆 在图片上用手指涂抹需要去除的水印区域</text>
+  </view>
+
+  <view class="canvas-wrap" wx:if="{{imageUrl}}">
+    <image class="brush-bg" src="{{imageUrl}}" mode="aspectFit"></image>
+    <canvas type="2d" id="brushCanvas" class="brush-canvas"
+      bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd">
+    </canvas>
+  </view>
+
+  <view class="upload-area glass-card" bindtap="chooseImage" wx:if="{{!imageUrl}}">
+    <view class="upload-icon">✏️</view>
+    <text class="upload-text">选择需要处理的图片</text>
+  </view>
+
+  <view class="brush-tools" wx:if="{{imageUrl && !processing && !resultUrl}}">
+    <view class="btn-outline" bindtap="clearMask">清除涂抹</view>
+    <view class="btn-primary" bindtap="startProcess">开始消除</view>
+  </view>
+
+  <view class="loading-wrap" wx:if="{{processing}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在精准消除...</text>
+  </view>
+
+  <view class="result-area glass-card" wx:if="{{resultUrl}}">
+    <image class="preview-img" src="{{resultUrl}}" mode="aspectFit"></image>
+    <view class="btn-primary" style="margin-top:24rpx" bindtap="saveImage">保存到相册</view>
+  </view>
+</view>

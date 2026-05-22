@@ -1,0 +1,36 @@
+<view class="page-container">
+  <view class="input-card glass-card">
+    <view class="section-title">粘贴视频链接</view>
+    <view class="section-sub">支持抖音、快手、小红书等分享文案，DeepSeek 智能解析</view>
+    <textarea class="url-input" placeholder="请粘贴视频分享链接或完整分享文案..." value="{{videoUrl}}" bindinput="onInput" maxlength="500"></textarea>
+    <view class="paste-btn" bindtap="pasteUrl">📋 粘贴链接</view>
+  </view>
+
+  <view class="btn-primary" bindtap="startParse" wx:if="{{!processing && !result}}">开始解析去水印</view>
+
+  <view class="loading-wrap" wx:if="{{processing}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">DeepSeek 正在智能解析...</text>
+  </view>
+
+  <view class="result-card glass-card" wx:if="{{result}}">
+    <view class="section-title">解析结果</view>
+    <text class="result-platform" wx:if="{{result.platform}}">{{result.platform}}</text>
+    <text class="result-title">{{result.title || '视频解析成功'}}</text>
+    <text class="result-tips" wx:if="{{result.tips}}">{{result.tips}}</text>
+    <video wx:if="{{result.video_url}}" class="result-video" src="{{result.video_url}}" controls poster="{{result.cover}}"></video>
+    <view class="btn-primary" style="margin-top:32rpx" bindtap="copyUrl">复制链接</view>
+    <view class="btn-outline" style="margin-top:20rpx" bindtap="saveVideo">保存视频</view>
+  </view>
+</view>
+
+<view class="modal-mask" wx:if="{{showAdModal}}">
+  <view class="modal-content">
+    <view class="modal-title">次数不足</view>
+    <view class="modal-desc">观看广告可获得额外次数</view>
+    <view class="modal-btns">
+      <view class="btn btn-cancel" bindtap="closeModal">取消</view>
+      <view class="btn btn-confirm" bindtap="watchAd">看广告</view>
+    </view>
+  </view>
+</view>

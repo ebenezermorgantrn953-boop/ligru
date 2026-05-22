@@ -1,0 +1,47 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 32rpx;
+  margin-bottom: 24rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 28rpx;
+  background: #E8E8F0;
+}
+
+.user-info { flex: 1; }
+.nickname { font-size: 34rpx; font-weight: 700; color: #333; display: block; }
+
+.user-tags { margin-top: 8rpx; }
+.vip-tag { font-size: 24rpx; color: #8B5CF6; }
+.count-tag { font-size: 24rpx; color: #5B6CF8; }
+
+.arrow { color: #CCC; font-size: 36rpx; }
+
+.stats-row {
+  display: flex;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+}
+
+.stat-item { flex: 1; text-align: center; }
+.stat-num { display: block; font-size: 40rpx; font-weight: 700; color: #5B6CF8; }
+.stat-label { font-size: 24rpx; color: #999; margin-top: 8rpx; }
+.stat-divider { width: 1rpx; background: #F0F2F5; }
+
+.menu-list { padding: 0 8rpx; }
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 24rpx;
+  border-bottom: 1rpx solid #F0F2F5;
+}
+.menu-item:last-child { border-bottom: none; }
+.menu-item:active { background: #F8F9FC; }
+.menu-icon { font-size: 36rpx; margin-right: 20rpx; }
+.menu-text { flex: 1; font-size: 28rpx; }
+.menu-arrow { color: #CCC; }

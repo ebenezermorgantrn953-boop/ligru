@@ -1,0 +1,14 @@
+.git
+.gitignore
+*.md
+docs
+tests
+.env
+.env.*
+docker-compose.yml
+uploads/images/*
+uploads/videos/*
+uploads/masks/*
+uploads/results/*
+!uploads/.htaccess
+!uploads/index.html

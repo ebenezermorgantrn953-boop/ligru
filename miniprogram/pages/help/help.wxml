@@ -1,0 +1,6 @@
+<view class="page-container">
+  <view class="help-card glass-card" wx:for="{{helps}}" wx:key="q">
+    <view class="help-q">{{item.q}}</view>
+    <view class="help-a">{{item.a}}</view>
+  </view>
+</view>

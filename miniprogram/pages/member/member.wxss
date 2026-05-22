@@ -1,0 +1,46 @@
+.vip-banner {
+  border-radius: 28rpx;
+  padding: 48rpx 40rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.vip-title { display: block; font-size: 40rpx; font-weight: 800; color: #fff; }
+.vip-desc { display: block; font-size: 26rpx; color: rgba(255,255,255,0.85); margin-top: 12rpx; }
+
+.plan-list { margin-bottom: 32rpx; }
+
+.plan-card {
+  padding: 36rpx 32rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  border: 2rpx solid transparent;
+  transition: all 0.2s;
+}
+
+.plan-card.active {
+  border-color: #5B6CF8;
+  box-shadow: 0 8rpx 32rpx rgba(91,108,248,0.25);
+}
+
+.plan-card.hot { border-color: #8B5CF6; }
+
+.hot-badge {
+  position: absolute;
+  top: 0; right: 32rpx;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 0 0 12rpx 12rpx;
+}
+
+.plan-name { font-size: 30rpx; font-weight: 600; }
+.plan-price { margin: 12rpx 0; color: #5B6CF8; font-size: 28rpx; }
+.price-num { font-size: 48rpx; font-weight: 800; }
+.plan-days { font-size: 24rpx; color: #999; }
+
+.privilege { padding: 32rpx; margin-bottom: 40rpx; }
+.priv-item { font-size: 28rpx; color: #666; padding: 12rpx 0; }
+
+.pay-btn { margin-top: 20rpx; }

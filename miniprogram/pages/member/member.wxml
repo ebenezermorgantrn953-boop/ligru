@@ -1,0 +1,41 @@
+<view class="page-container">
+  <view class="vip-banner gradient-primary">
+    <text class="vip-title">👑 开通会员</text>
+    <text class="vip-desc">解锁无限次去水印 · 极速处理 · 专属特权</text>
+  </view>
+
+  <view class="plan-list">
+    <view class="plan-card glass-card {{selectedPlan === 'month' ? 'active' : ''}}"
+      bindtap="selectPlan" data-plan="month">
+      <view class="plan-name">月卡会员</view>
+      <view class="plan-price">¥<text class="price-num">{{plans.month.price}}</text></view>
+      <view class="plan-days">{{plans.month.days}}天无限使用</view>
+      <view class="plan-tag" wx:if="{{selectedPlan === 'month'}}">已选</view>
+    </view>
+
+    <view class="plan-card glass-card hot {{selectedPlan === 'quarter' ? 'active' : ''}}"
+      bindtap="selectPlan" data-plan="quarter">
+      <view class="hot-badge">超值</view>
+      <view class="plan-name">季卡会员</view>
+      <view class="plan-price">¥<text class="price-num">{{plans.quarter.price}}</text></view>
+      <view class="plan-days">{{plans.quarter.days}}天无限使用</view>
+    </view>
+
+    <view class="plan-card glass-card {{selectedPlan === 'year' ? 'active' : ''}}"
+      bindtap="selectPlan" data-plan="year">
+      <view class="plan-name">年卡会员</view>
+      <view class="plan-price">¥<text class="price-num">{{plans.year.price}}</text></view>
+      <view class="plan-days">{{plans.year.days}}天无限使用</view>
+    </view>
+  </view>
+
+  <view class="privilege glass-card">
+    <view class="section-title">会员特权</view>
+    <view class="priv-item">✅ 无限次去水印处理</view>
+    <view class="priv-item">✅ 优先处理队列</view>
+    <view class="priv-item">✅ 高清无损导出</view>
+    <view class="priv-item">✅ 免广告打扰</view>
+  </view>
+
+  <view class="btn-primary pay-btn" bindtap="doPay">立即开通</view>
+</view>

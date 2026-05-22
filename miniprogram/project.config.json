@@ -1,0 +1,17 @@
+{
+  "description": "AI智能去水印微信小程序",
+  "packOptions": { "ignore": [] },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.25.0",
+  "appid": "your_appid_here",
+  "projectname": "ai-watermark-remover",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "condition": {}
+}

@@ -1,0 +1,28 @@
+# 依赖与缓存
+node_modules/
+vendor/
+.idea/
+.vscode/
+*.log
+
+# 上传文件
+backend/uploads/images/*
+backend/uploads/videos/*
+backend/uploads/masks/*
+backend/uploads/results/*
+!backend/uploads/**/.gitkeep
+
+# 密钥与本地配置（勿提交）
+backend/config/deepseek.php
+.env
+*.local.php
+
+# 系统与打包
+.DS_Store
+Thumbs.db
+*.zip
+tests/stress/report_*.txt
+
+# 临时
+*.tmp
+*.swp

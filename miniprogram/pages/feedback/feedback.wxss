@@ -1,0 +1,20 @@
+.form-card { padding: 32rpx; margin-bottom: 32rpx; }
+
+.feedback-input {
+  width: 100%;
+  min-height: 240rpx;
+  background: #F8F9FC;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.char-count { text-align: right; font-size: 22rpx; color: #999; margin-top: 8rpx; }
+
+.contact-input {
+  background: #F8F9FC;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+}

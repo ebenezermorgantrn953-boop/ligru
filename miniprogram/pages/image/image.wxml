@@ -1,0 +1,41 @@
+<view class="page-container">
+  <view class="upload-area glass-card" bindtap="chooseImage" wx:if="{{!imageUrl}}">
+    <view class="upload-icon">📷</view>
+    <text class="upload-text">点击选择图片</text>
+    <text class="upload-hint">支持相册选取或拍照上传</text>
+  </view>
+
+  <view class="preview-area" wx:if="{{imageUrl}}">
+    <image class="preview-img" src="{{imageUrl}}" mode="aspectFit"></image>
+    <view class="preview-actions">
+      <view class="btn-outline" bindtap="chooseImage">重新选择</view>
+      <view class="btn-primary" bindtap="startProcess" wx:if="{{!processing && !resultUrl}}">开始去水印</view>
+    </view>
+  </view>
+
+  <view class="loading-wrap" wx:if="{{processing}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">AI 智能处理中...</text>
+    <text class="loading-text" style="font-size:22rpx;margin-top:8rpx">请耐心等待，正在无痕清除水印</text>
+  </view>
+
+  <view class="result-area glass-card" wx:if="{{resultUrl}}">
+    <view class="section-title">处理结果</view>
+    <image class="preview-img" src="{{resultUrl}}" mode="aspectFit" bindtap="previewResult"></image>
+    <view class="result-btns">
+      <view class="btn-primary" bindtap="saveImage">保存到相册</view>
+      <view class="btn-outline" style="margin-top:20rpx" bindtap="reset">处理新图片</view>
+    </view>
+  </view>
+</view>
+
+<view class="modal-mask" wx:if="{{showAdModal}}">
+  <view class="modal-content">
+    <view class="modal-title">次数不足</view>
+    <view class="modal-desc">观看广告可获得额外次数，或开通会员无限使用</view>
+    <view class="modal-btns">
+      <view class="btn btn-cancel" bindtap="closeModal">取消</view>
+      <view class="btn btn-confirm" bindtap="watchAd">看广告</view>
+    </view>
+  </view>
+</view>

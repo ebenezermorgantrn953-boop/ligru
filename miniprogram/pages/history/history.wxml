@@ -1,0 +1,25 @@
+<view class="page-container">
+  <view class="empty" wx:if="{{!loading && list.length === 0}}">
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">暂无处理记录</text>
+  </view>
+
+  <view class="record-list">
+    <view class="record-item glass-card" wx:for="{{list}}" wx:key="id">
+      <view class="record-type {{item.type}}">
+        {{item.type === 'image' ? '图片' : item.type === 'video' ? '视频' : '涂抹'}}
+      </view>
+      <view class="record-info">
+        <text class="record-time">{{item.created_at}}</text>
+        <text class="record-status {{item.status == 1 ? 'success' : item.status == 2 ? 'fail' : ''}}">
+          {{item.status == 1 ? '成功' : item.status == 2 ? '失败' : '处理中'}}
+        </text>
+      </view>
+      <view class="record-action" wx:if="{{item.status == 1}}" bindtap="viewResult" data-item="{{item}}">查看 ›</view>
+    </view>
+  </view>
+
+  <view class="loading-wrap" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+</view>
